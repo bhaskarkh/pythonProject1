@@ -1,4 +1,43 @@
 import re
+# find the first repeating char in a string
+# i/p = "priyanka"
+# o/p = a
+# i/p = "banna"
+# o/p = n
+
+def first_repeating_char(s):
+    count_of_elements = {}
+    for x in s:
+        if x in count_of_elements:
+            return x
+        else:
+            count_of_elements[x] = 1
+    return None
+
+print(first_repeating_char("banna"))
+
+# find the first unique number from a list
+# i/p = [4, 5, 1, 0, 2, 4]
+# o,p = 5
+# i/p = [7, 7, 7, 7, 6, 6]
+# o/p = None
+
+def first_unique_num(input_list):
+    count_of_elements = {}
+    for x in input_list:
+        if x in count_of_elements:
+            count_of_elements[x] += 1
+        else:
+            count_of_elements[x] = 1
+
+    for a, b in count_of_elements.items():
+        if b == 1:
+            return a
+
+    return None
+
+print(first_unique_num([4, 5, 1, 0, 2, 4]))
+
 
 str = "welcome to bangalore"
 
@@ -36,12 +75,12 @@ def find_mirror_image(s):
         else:
             result_str = "Not Possible"
             break
-        
+
     return  result_str
 
 print(find_mirror_image(input_str))
 
-
+#
 
 
 a = [12, 4, "c", 7, "a", "b"]
